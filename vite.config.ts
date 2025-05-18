@@ -27,7 +27,7 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
-  base: "/HomeHubDashboard/",  // Ensure the correct base path
+  base: process.env.VITE_BASE_URL || "/",  // Dynamic base path
   server: {
     host: true,
   },
