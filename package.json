@@ -10,7 +10,7 @@
     "check": "tsc",
     "db:push": "drizzle-kit push",
     "predeploy": "npm run build",
-    "deploy": "git add dist -f && git commit -m 'Deploy to GitHub Pages' && git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build && git checkout gh-pages && cp -r dist/* . && git add . && git commit -m 'Deploy to GitHub Pages' && git push origin gh-pages && git checkout -"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
